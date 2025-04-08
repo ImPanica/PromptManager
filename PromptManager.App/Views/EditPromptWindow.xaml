@@ -1,0 +1,73 @@
+<ui:FluentWindow x:Class="PromptManager.App.Views.EditPromptWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+        mc:Ignorable="d"
+        Title="Edit Prompt" 
+        Height="550" Width="800"
+        WindowStartupLocation="CenterOwner"
+        ExtendsContentIntoTitleBar="True"
+        WindowBackdropType="Mica">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <ui:TitleBar
+            Title="Edit Prompt"
+            Grid.Row="0"/>
+
+        <ui:Card Grid.Row="1" Margin="16">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <ui:TextBlock Text="Edit Prompt" 
+                         FontTypography="Title"
+                         Margin="0,0,0,16"
+                         Style="{StaticResource TitleTextBlockStyle}"/>
+
+                <!-- Action -->
+                <StackPanel Grid.Row="1" Margin="0,0,0,16">
+                    <ui:TextBox x:Name="ActionTextBox"
+                             PlaceholderText="Action"
+                             Margin="0,0,0,16"
+                             Text="{Binding ActionText, UpdateSourceTrigger=PropertyChanged}"/>
+                <!-- Promt -->
+                    <ui:TextBox x:Name="PromptTextBox"
+                             PlaceholderText="Prompt Text"
+                             TextWrapping="Wrap"
+                             AcceptsReturn="True"
+                             Height="200"
+                             Text="{Binding PromptText, UpdateSourceTrigger=PropertyChanged}"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="2" 
+                          Orientation="Horizontal" 
+                          HorizontalAlignment="Right">
+                    <ui:Button Appearance="Danger"
+                            Margin="0,0,8,0"
+                            Command="{Binding CancelCommand}"
+                            Width="120">
+                        Cancel
+                    </ui:Button>
+                    <ui:Button Appearance="Primary"
+                            Command="{Binding SaveCommand}"
+                            Width="120">
+                        <StackPanel Orientation="Horizontal">
+                            <ui:SymbolIcon Symbol="Save24" Margin="0,0,8,0"/>
+                            <TextBlock Text="Save"/>
+                        </StackPanel>
+                    </ui:Button>
+                </StackPanel>
+            </Grid>
+        </ui:Card>
+    </Grid>
+</ui:FluentWindow> 

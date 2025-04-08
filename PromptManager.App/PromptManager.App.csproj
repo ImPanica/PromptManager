@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>..\..\vibrant_compact_3.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+    <PackageReference Include="CsvHelper" Version="30.0.1" />
+    <PackageReference Include="WPF-UI" Version="4.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Views\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime>Wpf</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Icon\vibrant_compact_3.ico" />
+    <None Include="..\..\vibrant_compact_3.ico">
+      <Link>vibrant_compact_3.ico</Link>
+    </None>
+    <Resource Include="Resources\Icon\vibrant_compact_3.ico" />
+  </ItemGroup>
+
+</Project>
