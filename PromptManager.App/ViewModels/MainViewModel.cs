@@ -107,7 +107,7 @@ namespace PromptManager.App.ViewModels
                 dialog.Owner = Application.Current.MainWindow;
                 if (dialog.ShowDialog() == true)
                 {
-                    if (SelectedSection != null)
+                    if (SelectedSection != null) // Added
                     {
                         _csvService.SaveSection(SelectedSection);
                         _notificationService.ShowSuccess("Prompt updated successfully");
