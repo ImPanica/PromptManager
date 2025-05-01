@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
-    <ApplicationIcon>..\..\vibrant_compact_3.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\Icon\vibrant_compact_3.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -25,10 +25,8 @@
 
   <ItemGroup>
     <None Remove="Resources\Icon\vibrant_compact_3.ico" />
-    <None Include="..\..\vibrant_compact_3.ico">
-      <Link>vibrant_compact_3.ico</Link>
-    </None>
     <Resource Include="Resources\Icon\vibrant_compact_3.ico" />
+    <None Remove="vibrant_compact_3.ico" />
   </ItemGroup>
 
 </Project>
